@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shimmer Chords Explorer - Microtonal Tuning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Shimmer Chords Explorer</h1>
+            <p class="subtitle">Drag points to move • Click circle to add • Double-click to remove</p>
+        </header>
+
+        <div class="controls-panel">
+            <div class="control-group">
+                <label for="edo-select">Tuning System</label>
+                <select id="edo-select">
+                    <option value="12">12-EDO (Standard)</option>
+                    <option value="19" selected>19-EDO</option>
+                    <option value="22">22-EDO</option>
+                    <option value="31">31-EDO</option>
+                    <option value="53">53-EDO</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="root-select">Root Note</label>
+                <select id="root-select">
+                    <option value="0" selected>C</option>
+                    <option value="1">C#</option>
+                    <option value="2">D</option>
+                    <option value="3">D#</option>
+                    <option value="4">E</option>
+                    <option value="5">F</option>
+                    <option value="6">F#</option>
+                    <option value="7">G</option>
+                    <option value="8">G#</option>
+                    <option value="9">A</option>
+                    <option value="10">A#</option>
+                    <option value="11">B</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="instrument-select">Instrument</label>
+                <select id="instrument-select">
+                    <option value="piano" selected>Piano</option>
+                    <option value="guitar">Guitar</option>
+                    <option value="strings">Strings</option>
+                    <option value="organ">Organ</option>
+                    <option value="flute">Flute</option>
+                    <option value="brass">Brass</option>
+                    <option value="synth">Synth</option>
+                </select>
+            </div>
+
+            <div class="control-group audio-group">
+                <label>Playback</label>
+                <div class="audio-controls">
+                    <button id="play-btn" class="btn-primary">▶ Play</button>
+                    <button id="stop-btn" class="btn-secondary">■ Stop</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="presets-panel">
+            <label class="presets-label">Preset Chords</label>
+            <div class="presets-grid">
+                <button class="preset-chord-btn" data-chord="major">Major</button>
+                <button class="preset-chord-btn" data-chord="minor">Minor</button>
+                <button class="preset-chord-btn" data-chord="diminished">Dim</button>
+                <button class="preset-chord-btn" data-chord="augmented">Aug</button>
+                <button class="preset-chord-btn" data-chord="sus2">Sus2</button>
+                <button class="preset-chord-btn" data-chord="sus4">Sus4</button>
+                <button class="preset-chord-btn" data-chord="major7">Maj7</button>
+                <button class="preset-chord-btn" data-chord="minor7">Min7</button>
+                <button class="preset-chord-btn" data-chord="dominant7">Dom7</button>
+            </div>
+        </div>
+
+        <div class="visualization-container">
+            <canvas id="circle-canvas"></canvas>
+            <div class="info-panel">
+                <div id="chord-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

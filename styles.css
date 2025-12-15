@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 35px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.1em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 0.95em;
+    opacity: 0.92;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.controls-panel {
+    padding: 25px 30px;
+    background: #fafafa;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.presets-panel {
+    padding: 20px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.presets-label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.presets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.preset-chord-btn {
+    padding: 10px 16px;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: white;
+    color: #667eea;
+}
+
+.preset-chord-btn:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.preset-chord-btn:active {
+    transform: translateY(0);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 150px;
+}
+
+.audio-group {
+    min-width: 200px;
+}
+
+.control-group label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+select {
+    padding: 10px 12px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95em;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #333;
+}
+
+select:hover {
+    border-color: #667eea;
+    background: #fafafa;
+}
+
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.audio-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+
+.visualization-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background: white;
+}
+
+#circle-canvas {
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    display: block;
+    cursor: default;
+}
+
+.info-panel {
+    width: 100%;
+    max-width: 500px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#chord-info {
+    line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 30px 20px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .controls-panel {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+    
+    .visualization-container {
+        padding: 20px;
+    }
+    
+    #circle-canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
